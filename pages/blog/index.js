@@ -8,13 +8,14 @@ import Date from '../../components/Date';
 import LoadMore from '../../components/LoadMore';
 import { useState } from 'react';
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
 	const allPosts = await getPostList();
 
 	return {
 		props: {
 			allPosts: allPosts,
 		},
+		revalidate: 350,
 	};
 }
 

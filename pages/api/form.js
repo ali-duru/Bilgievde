@@ -1,9 +1,11 @@
 export default function handler(req, res) {
-    const body = req.body;
+	const body = req.body;
 
-    if(!body.firstName || !body.email || !body.message) {
-        return res.status(400).json({data: "first name, email, and message fields are required!"});
-    }
+	if (!body.firstName || !body.email || !body.message) {
+		return res.status(400).json({
+			data: 'İsim Soyisim, e-mail ve mesajı alanları zorunludur!',
+		});
+	}
 
-    return res.status(200).json({data: "form submitted successfully"});
+	return res.status(200).json({ data: 'Formunuz başarıyla gönderildi.' });
 }
